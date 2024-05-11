@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/userName"
         android:textAlignment="center"
+        android:inputType="textPersonName"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
