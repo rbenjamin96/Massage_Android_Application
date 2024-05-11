@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Massage Application</string>
+    <string name="title">Masszázs alkalmazás</string>
+    <string name="userName">Felhasználónév</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+</resources>
