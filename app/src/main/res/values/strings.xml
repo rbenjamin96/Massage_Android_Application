@@ -10,4 +10,14 @@
     <string name="registrationTitle">Új profil létrehozása</string>
     <string name="cancel">Mégsem</string>
     <string name="phone">Telefonszám</string>
+    <string name="preferredLocationText">Szolgáltatás helye:</string>
+    <string name="genderMale">Férfi</string>
+    <string name="genderFemale">Nő</string>
+
+    <string-array name="preferredLocations">
+        <item>Szeged</item>
+        <item>Budapest</item>
+        <item>Győr</item>
+        <item>Debrecen</item>
+    </string-array>
 </resources>

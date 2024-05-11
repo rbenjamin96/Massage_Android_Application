@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText passwordEditText;
     EditText passwordConfirmationEditText;
     EditText phoneEditText;
+    Spinner preferredLocation;
+    RadioGroup gender;
 
     private SharedPreferences preferences;
 
@@ -35,11 +41,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
 
         if (secret_key != 99) finish();
+
         userNameEditText = findViewById(R.id.userNameEditText);
         userEmailEditText = findViewById(R.id.userEmailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         passwordConfirmationEditText = findViewById(R.id.passwordConfirmationEditText);
         phoneEditText = findViewById(R.id.phoneEditText);
+        preferredLocation = findViewById(R.id.preferredLocation);
+        gender = findViewById(R.id.genderRadio);
+        gender.check(R.id.male);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -55,6 +65,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userNameEditText.setText(userName);
         passwordEditText.setText(password);
 
+        preferredLocation.setOnItemSelectedListener(this);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.preferredLocations, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        preferredLocation.setAdapter(adapter);
+
         Log.i(LOG_TAG, "onCreate");
     }
 
@@ -63,9 +78,14 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String email = userEmailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String passwordConfirmation = passwordConfirmationEditText.getText().toString();
+            if(!password.equals(passwordConfirmation)) Log.e(LOG_TAG,"Nem egyforma jelszót adtál meg.");
         String phone = phoneEditText.getText().toString();
+        String choosenLocation = preferredLocation.getSelectedItem().toString();
 
-        if(!password.equals(passwordConfirmation)) Log.e(LOG_TAG,"Nem egyforma jelszót adtál meg.");
+        int genderId = gender.getCheckedRadioButtonId();
+        RadioButton radioButton = gender.findViewById(genderId);
+        String gender = radioButton.getText().toString();
+
 
         Log.i(LOG_TAG,"Regisztrált: "+ userName+ ", email: "+ email);
     }

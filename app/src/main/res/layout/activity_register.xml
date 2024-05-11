@@ -97,6 +97,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordConfirmationEditText" />
 
+    <TextView
+        android:id="@+id/preferredLocationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginValue"
+        android:text="@string/preferredLocationText"
+        android:textSize="@dimen/inputTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/preferredLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
+
+    <Spinner
+        android:id="@+id/preferredLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
+
+    <RadioGroup
+        android:id="@+id/genderRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preferredLocationText" >
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genderMale"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genderFemale"
+            />
+
+    </RadioGroup>
+
+
     <Button
         android:id="@+id/registration"
         android:layout_width="wrap_content"
@@ -108,7 +150,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditText"
+        app:layout_constraintTop_toBottomOf="@+id/genderRadio"
         app:layout_constraintVertical_bias="0.214"/>
 
     <Button
@@ -120,7 +162,7 @@
         android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditText"
+        app:layout_constraintTop_toBottomOf="@+id/genderRadio"
         app:layout_constraintVertical_bias="0.214" />
 
 
