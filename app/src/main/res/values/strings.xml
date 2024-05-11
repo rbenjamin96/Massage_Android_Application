@@ -5,7 +5,8 @@
     <string name="password">Jelszó</string>
     <string name="login">Bejelentkezés</string>
     <string name="register">Regisztráció</string>
-    <string name="registerTitle">Regisztráció</string>
     <string name="email_address">E-mail cím</string>
     <string name="passwordConfirmation">Jelszó Újra</string>
+    <string name="registrationTitle">Új profil létrehozása</string>
+    <string name="cancel">Mégsem</string>
 </resources>
