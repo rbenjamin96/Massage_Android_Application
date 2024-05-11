@@ -5,76 +5,72 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/registerTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/title"
+        android:layout_marginTop="16dp"
+        android:text="@string/registerTitle"
         android:textAlignment="center"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
-        android:id="@+id/editTextUserName"
+        android:id="@+id/userNameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
         android:hint="@string/userName"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintTop_toBottomOf="@+id/registerTitle" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/userEmailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userNameEditText" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserName"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintTop_toBottomOf="@+id/userEmailEditText" />
 
-    <Button
-        android:id="@+id/loginButton"
+    <EditText
+        android:id="@+id/passwordConfirmationEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="login"
-        android:text="@string/login"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        android:hint="@string/passwordConfirmation"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="register"
-        android:text="@string/register"
-        app:layout_constraintBottom_toBottomOf="@+id/loginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.652" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

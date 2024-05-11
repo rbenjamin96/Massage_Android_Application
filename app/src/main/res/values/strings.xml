@@ -4,4 +4,8 @@
     <string name="userName">Felhasználónév</string>
     <string name="password">Jelszó</string>
     <string name="login">Bejelentkezés</string>
+    <string name="register">Regisztráció</string>
+    <string name="registerTitle">Regisztráció</string>
+    <string name="email_address">E-mail cím</string>
+    <string name="passwordConfirmation">Jelszó Újra</string>
 </resources>
