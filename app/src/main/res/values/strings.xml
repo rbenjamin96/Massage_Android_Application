@@ -13,6 +13,7 @@
     <string name="preferredLocationText">Szolgáltatás helye:</string>
     <string name="genderMale">Férfi</string>
     <string name="genderFemale">Nő</string>
+    <string name="serviceDescription">Masszázs leírás</string>
 
     <string-array name="preferredLocations">
         <item>Szeged</item>

@@ -1,5 +1,6 @@
 package com.example.massageapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String LOG_TAG = RegisterActivity.class.getName();
     private static final String PREF_KEY = RegisterActivity.class.getPackage().toString();
+    private static final int SECRET_KEY = 99;
     EditText userNameEditText;
     EditText userEmailEditText;
     EditText passwordEditText;
@@ -88,10 +90,18 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
 
         Log.i(LOG_TAG,"Regisztrált: "+ userName+ ", email: "+ email);
+        startAppointments();
+
     }
 
     public void cancel(View view) {
         finish();
+    }
+
+    private void startAppointments(/*registered user data*/){
+        Intent intent = new Intent(this, AppointmentsActivity.class);
+        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        startActivity(intent);
     }
 
     @Override
@@ -127,6 +137,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         //TODO
+
     }
 
     @Override
