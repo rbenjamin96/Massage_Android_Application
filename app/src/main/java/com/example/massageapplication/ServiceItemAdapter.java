@@ -108,7 +108,7 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
             mRatingBar = itemView.findViewById(R.id.ratingBar);
             mWebpages = itemView.findViewById(R.id.webpage);
 
-            itemView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener(){
+            itemView.findViewById(R.id.booking).setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
                     Log.d("Activity","The Add to cart button has been pressed");

@@ -82,11 +82,12 @@
             android:layout_below="@id/datePicker"
             android:layout_centerHorizontal="true">
             <Button
-                android:id="@+id/add_to_cart"
+                android:id="@+id/booking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/datePicker"
                 android:text="@string/booking"
+                android:onClick="makeBooking"
                 android:layout_centerHorizontal="true"
             />
             <Button
