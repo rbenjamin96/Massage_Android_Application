@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -39,6 +41,12 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
         ServiceItem currentItem = mServiceItemsData.get(i);
 
         viewHolder.bindTo(currentItem);
+
+        if(viewHolder.getAdapterPosition() > lastPosition){
+            Animation animation = AnimationUtils.loadAnimation(mContext,R.anim.slide_inrow);
+            viewHolder.itemView.startAnimation(animation);
+            lastPosition = viewHolder.getAbsoluteAdapterPosition();
+        }
     }
 
     @Override

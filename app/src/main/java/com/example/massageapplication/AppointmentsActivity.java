@@ -1,9 +1,14 @@
 package com.example.massageapplication;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,12 +32,17 @@ public class AppointmentsActivity extends AppCompatActivity {
     private ArrayList<ServiceItem> mItemList;
     private ServiceItemAdapter mAdapter;
 
+
     private int gridNumber = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_appointments);
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -59,6 +69,18 @@ public class AppointmentsActivity extends AppCompatActivity {
 
     }
 
+    //Date:
+    /*private void openDialog(){
+        DatePickerDialog dialog = new DatePickerDialog(this,R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                textDate.setText(String.valueOf(year)+"."+String.valueOf(month+1)+"."+ String.valueOf(day));
+            }
+        }, 2024, 01, 01);
+        dialog.show();
+    }*/
+
 
     @SuppressLint("NotifyDataSetChanged")
     private void initializeData() {
@@ -77,4 +99,6 @@ public class AppointmentsActivity extends AppCompatActivity {
         itemsImageResource.recycle();
         mAdapter.notifyDataSetChanged();
     }
+
+
 }

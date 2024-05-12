@@ -32,7 +32,7 @@
             android:layout_marginStart="8dp" />
         <TextView
             android:id="@+id/subTitle"
-            style="@style/ItemDetailText"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ratingBar"
@@ -41,7 +41,7 @@
     
         <TextView
             android:id="@+id/price"
-            style="@style/ItemDetailText"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/subTitle"
@@ -49,13 +49,30 @@
             android:padding="8dp"
             android:textColor="@color/red"
             android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pickadate"/>
+        <Button
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_centerHorizontal="true"
+            android:text="@string/startDate"/>
+
         <Button
             android:id="@+id/add_to_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/price"
-            android:text="Kosárba"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@id/datePicker"
+            android:text="@string/booking"
+            android:layout_centerHorizontal="true"
+                />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

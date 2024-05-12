@@ -26,41 +26,50 @@
     <string name="title_placeholder">Masszás megnevezése</string>
     <string name="item_placeholder">Kinek ajánljuk</string>
     <string name="item_info_placeholder">Információ a masszázsról</string>
+    <string name="search">Keresés</string>
+    <string name="cart">Bevásárlókosár</string>
+    <string name="view">Nézet</string>
+    <string name="settings">Beállítások</string>
+    <string name="logOut">Kijelentkezés</string>
+    <string name="booking">Lefoglalás</string>
+    <string name="pickadate">Válassz dátumot:</string>
+    <string name="startDate">Dátum</string>
 
     <string-array name="service_item_names">
-        <item>masszazs1</item>
-        <item>masszazs2</item>
-        <item>masszazs3</item>
-        <item>masszazs4</item>
-        <item>masszazs5</item>
-        <item>masszazs6</item>
+        <item>Gyógymasszázs</item>
+        <item>Svédmasszázs</item>
+        <item>Zsírégető masszázs</item>
+        <item>Nyirokmasszázs</item>
+        <item>Talpmasszázs</item>
+        <item>Thai masszázs</item>
+
     </string-array>
 
     <string-array name="service_item_description">
-        <item>masszazs1leiras</item>
-        <item>masszazs2leiras</item>
-        <item>masszazs3leiras</item>
-        <item>masszazs4leiras</item>
-        <item>masszazs5leiras</item>
-        <item>masszazs6leiras</item>
-    </string-array>
+        <item>A gyógymasszázs vagy orvosi masszázs orvosi rendelvény alapján végzett masszázskezelés. A kezeléseket nem az orvos végzi hanem a gyógymasszőr. Többnyire terápiás célzattal adják és rendelőintézetekben, gyógyfürdőkben, magán egészségügyi intézményekben, magán egészségügyi önálló gyógymasszőröknél lehet igénybe venni.</item>
+        <item>A svéd masszázs kézzel végzett, az emberi szervezetet mechanikai ingerek által befolyásoló kezelési technika. Egyes keleti masszázsoktól eltérően közvetlen fiziológiai hatásokra épít, ám a személyes törődés érzete a lelki egészségnek is jót tesz. A masszázst ruhátlan testfelületen, vivőanyaggal (krém) vagy anélkül végzik. Az éppen nem kezelt testrészeket betakarják. A vendég jellemzően masszázságyon fekszik vagy masszázsszéken ül.</item>
+        <item>A masszázs során a testnek olyan pontjait stimuláljuk, melyek összefüggésben állnak az éhségközponttal, és befolyásolják az anyagcserét. A kezelések hatására fokozatosan csökken a vendégek étvágya, ugyanakkor az anyagcsere is felgyorsul, így a felesleges anyagok gyorsabban távoznak a szervezetből. A kezelések során testünk alkalmazkodik ehhez a folyamathoz, ezért különösebb erőfeszítések nélkül, helyes táplálkozással megtartható a masszázzsal elért testsúly.</item>
+        <item>A nyirokrendszer ereket és csomópontokat tartalmaz nyirok, fehérjék, víz, salakanyagok és immunrendszeri elemek keverékével. A legnagyobb nyirokcsomók a nyakban, az ágyékban és a hónaljban találhatók, ezek mind együttműködnek, hogy a "tiszta" nyirok visszajusson a vénákba, amelyek a vért a szív felé szállítják. A testben található nyirokcsomók ennek érdekében igyekeznek kiszűrni a káros anyagokat és törmeléket. A nyirokmasszázs egy olyan terápiás technika, amelynek célja a nyirokrendszer stimulálása, a nyirokfolyadék áramlásának elősegítése és ezáltal az általános egészség javítása.</item>
+        <item>A talpmasszázs növeli szervezete ellenálló képességét. Csökkenti a stresszt és beindítja a méregtelenítést. Általános frissítő, feszültségoldó hatású, segíti testi, lelki egészségének megőrzését és visszaszerzését, öngyógyító erőit aktivizálva. A talpán lévő zónák masszírozásával reflexhatást válthatunk ki (Innen ered a reflexzóna masszázs elnevezés, amely egy gyűjtő fogalom.) a szervekben, így serkentve az öngyógyító mechanizmusokat.</item>
+        <item>A thai masszázs egy hagyományos ázsiai gyógyító eljárás, ami ötvözi az akupresszúrát, az indiai Ájurvéda elveit és bizonyos jógapozitúrákat. Alapjait az úgynevezett energia vonalak (Shen-lines) adják, melyek gyakorlatilag megegyeznek a jogában elfogadott nadikkal. A Thai Egészségügyi Minisztérium a thai masszázst a tradicionális alternatív gyógymódok között tartja nyilván.</item>
+        </string-array>
 
     <array name="service_item_rates">
-        <item>4</item>
-        <item>4.1</item>
-        <item>4.2</item>
         <item>4.3</item>
         <item>4.4</item>
-        <item>4.5</item>
-        <item>4.6</item>
+        <item>4</item>
+        <item>3.2</item>
         <item>4.7</item>
         <item>4.8</item>
     </array>
     
     <array name="service_item_images">
-        <item>@drawable/pic1</item>
-        <item>@drawable/pic2</item>
-        <item>@drawable/pic3</item>
+        <item>@drawable/gyogy</item>
+        <item>@drawable/sved</item>
+        <item>@drawable/zsir</item>
+        <item>@drawable/nyirok</item>
+        <item>@drawable/talp</item>
+        <item>@drawable/thai</item>
     </array>
     
     <array name="service_item_price">
