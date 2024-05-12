@@ -46,6 +46,10 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(platform(libs.firebase.bom))
    // implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation(libs.recyclerview)
+    implementation(libs.recyclerview.selection)
+    implementation(libs.glide)
+    implementation(libs.cardview)
 
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")

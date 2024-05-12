@@ -15,7 +15,6 @@
     <string name="genderFemale">Nő</string>
     <string name="serviceDescription">Masszázs leírás</string>
     <string name="guestLoginButton">Belépés vendégként</string>
-    <string name="loginwithGoogleButton">Bejelentkezés Google fiókkal</string>
 
     <string-array name="preferredLocations">
         <item>Szeged</item>
@@ -23,4 +22,57 @@
         <item>Győr</item>
         <item>Debrecen</item>
     </string-array>
+
+    <string name="title_placeholder">Masszás megnevezése</string>
+    <string name="item_placeholder">Kinek ajánljuk</string>
+    <string name="item_info_placeholder">Információ a masszázsról</string>
+
+    <string-array name="service_item_names">
+        <item>masszazs1</item>
+        <item>masszazs2</item>
+        <item>masszazs3</item>
+        <item>masszazs4</item>
+        <item>masszazs5</item>
+        <item>masszazs6</item>
+    </string-array>
+
+    <string-array name="service_item_description">
+        <item>masszazs1leiras</item>
+        <item>masszazs2leiras</item>
+        <item>masszazs3leiras</item>
+        <item>masszazs4leiras</item>
+        <item>masszazs5leiras</item>
+        <item>masszazs6leiras</item>
+    </string-array>
+
+    <array name="service_item_rates">
+        <item>4</item>
+        <item>4.1</item>
+        <item>4.2</item>
+        <item>4.3</item>
+        <item>4.4</item>
+        <item>4.5</item>
+        <item>4.6</item>
+        <item>4.7</item>
+        <item>4.8</item>
+    </array>
+    
+    <array name="service_item_images">
+        <item>@drawable/pic1</item>
+        <item>@drawable/pic2</item>
+        <item>@drawable/pic3</item>
+    </array>
+    
+    <array name="service_item_price">
+        <item>2500 Huf</item>
+        <item>3000 Huf</item>
+        <item>3500 Huf</item>
+        <item>4500 Huf</item>
+        <item>5500 Huf</item>
+        <item>6500 Huf</item>
+        <item>7500 Huf</item>
+        <item>10500 Huf</item>
+        <item>12500 Huf</item>
+    </array>
+
 </resources>
