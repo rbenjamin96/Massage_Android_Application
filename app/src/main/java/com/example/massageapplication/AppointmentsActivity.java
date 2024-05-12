@@ -1,6 +1,7 @@
 package com.example.massageapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +9,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AppointmentsActivity extends AppCompatActivity {
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+public class AppointmentsActivity extends AppCompatActivity {
+    private static final String LOG_TAG = AppointmentsActivity.class.getName();
+    private FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +26,14 @@ public class AppointmentsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            Log.d(LOG_TAG, "Authenticated user.");
+        } else{
+            Log.d(LOG_TAG, "Unauthenticated user.");
+            finish();
+        }
+
     }
 }

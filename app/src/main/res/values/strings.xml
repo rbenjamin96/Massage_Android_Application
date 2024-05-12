@@ -14,6 +14,8 @@
     <string name="genderMale">Férfi</string>
     <string name="genderFemale">Nő</string>
     <string name="serviceDescription">Masszázs leírás</string>
+    <string name="guestLoginButton">Belépés vendégként</string>
+    <string name="loginwithGoogleButton">Bejelentkezés Google fiókkal</string>
 
     <string-array name="preferredLocations">
         <item>Szeged</item>

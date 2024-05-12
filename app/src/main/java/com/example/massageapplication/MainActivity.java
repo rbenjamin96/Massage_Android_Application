@@ -97,4 +97,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i(LOG_TAG, "onRestart");
     }
 
+    public void loginAsGuest(View view) {
+        ///TODO
+    }
+
+    public void loginWithGoogle(View view) {
+        //TODO
+    }
 }

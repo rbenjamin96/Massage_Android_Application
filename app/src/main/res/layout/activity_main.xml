@@ -28,14 +28,15 @@
         android:layout_marginLeft="@dimen/marginValue"
         android:layout_marginRight="@dimen/marginValue"
         android:hint="@string/userName"
-        android:textAlignment="center"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textSize="@dimen/inputTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintVertical_bias="0.419" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -59,17 +60,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marginValue"
-        android:layout_marginRight="@dimen/marginValue"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/marginValue"
         android:layout_marginBottom="10dp"
+        android:onClick="login"
         android:text="@string/login"
         android:textSize="@dimen/buttonTextSize"
-        android:onClick="login"
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/registerButton"
@@ -77,15 +79,45 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/marginValue"
         android:layout_marginRight="@dimen/marginValue"
+        android:onClick="register"
         android:text="@string/register"
         android:textSize="@dimen/buttonTextSize"
-        android:onClick="register"
-        app:layout_constraintBottom_toBottomOf="@+id/loginButton"
+        app:layout_constraintBottom_toTopOf="@+id/guestButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintVertical_bias="0.749" />
+
+    <Button
+        android:id="@+id/guestButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/marginValue"
+        android:layout_marginRight="@dimen/marginValue"
+        android:onClick="loginAsGuest"
+        android:text="@string/guestLoginButton"
+        android:textSize="@dimen/buttonTextSize"
+        app:layout_constraintBottom_toTopOf="@id/loginwithGoogleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerButton"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <Button
+        android:id="@+id/loginwithGoogleButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/marginValue"
+        android:layout_marginRight="@dimen/marginValue"
+        android:onClick="loginWithGoogle"
+        android:text="@string/loginwithGoogleButton"
+        android:textSize="@dimen/buttonTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guestButton"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

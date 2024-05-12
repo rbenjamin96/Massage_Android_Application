@@ -11,12 +11,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String LOG_TAG = RegisterActivity.class.getName();
@@ -31,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     RadioGroup gender;
 
     private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +81,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         preferredLocation.setAdapter(adapter);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Log.i(LOG_TAG, "onCreate");
     }
 
@@ -90,8 +101,20 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
 
         Log.i(LOG_TAG,"Regisztrált: "+ userName+ ", email: "+ email);
-        startAppointments();
+        //startAppointments();
 
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG,"User created successfully.");
+                    startAppointments();
+                } else{
+                    Log.d(LOG_TAG,"User was not created");
+                    Toast.makeText(RegisterActivity.this, "User is not created: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void cancel(View view) {
@@ -100,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     private void startAppointments(/*registered user data*/){
         Intent intent = new Intent(this, AppointmentsActivity.class);
-        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        //intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);
     }
 
