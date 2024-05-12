@@ -98,26 +98,11 @@
         android:onClick="loginAsGuest"
         android:text="@string/guestLoginButton"
         android:textSize="@dimen/buttonTextSize"
-        app:layout_constraintBottom_toTopOf="@id/loginwithGoogleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerButton"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <Button
-        android:id="@+id/loginwithGoogleButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/marginValue"
-        android:layout_marginRight="@dimen/marginValue"
-        android:onClick="loginWithGoogle"
-        android:text="@string/loginwithGoogleButton"
-        android:textSize="@dimen/buttonTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guestButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.494" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

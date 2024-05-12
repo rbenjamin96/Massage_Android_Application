@@ -15,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -137,9 +138,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void loginWithGoogle(View view) {
-        //TODO
     }
 }
