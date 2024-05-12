@@ -5,7 +5,7 @@
     android:layout_margin="8dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <ImageView
             android:id="@+id/itemImage"
             android:layout_width="match_parent"
@@ -20,6 +20,16 @@
             android:padding="8dp"
             android:text="itemPlaceholder"
             android:textColor="?android:textColorSecondary"/>
+        <Button
+            android:id="@+id/webpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weboldal"
+            android:textColor="@color/black"
+            android:layout_below="@id/subTitle"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openWebpage"
+            />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -65,14 +75,28 @@
             android:layout_centerHorizontal="true"
             android:text="@string/startDate"/>
 
-        <Button
-            android:id="@+id/add_to_cart"
+        <LinearLayout
+            android:id="@+id/modificationButtons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/datePicker"
-            android:text="@string/booking"
-            android:layout_centerHorizontal="true"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datePicker"
+                android:text="@string/booking"
+                android:layout_centerHorizontal="true"
+            />
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Törlés"
+                android:layout_centerHorizontal="true"
                 />
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -2,12 +2,15 @@ package com.example.massageapplication;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -87,6 +90,7 @@ public class AppointmentsActivity extends AppCompatActivity {
         String[] itemsList = getResources().getStringArray(R.array.service_item_names);
         String[] itemsInfo = getResources().getStringArray(R.array.service_item_description);
         String[] itemsPrice = getResources().getStringArray(R.array.service_item_price);
+        String[] webpages = getResources().getStringArray(R.array.webpages);
 
         TypedArray itemsImageResource = getResources().obtainTypedArray(R.array.service_item_images);
         TypedArray itemsRate = getResources().obtainTypedArray(R.array.service_item_rates);
@@ -94,11 +98,19 @@ public class AppointmentsActivity extends AppCompatActivity {
         mItemList.clear();
 
         for(int i = 0; i < itemsList.length;i++){
-            mItemList.add(new ServiceItem(itemsList[i],itemsInfo[i], itemsPrice[i],itemsRate.getFloat(i,0),itemsImageResource.getResourceId(i,0)));
+            mItemList.add(new ServiceItem(itemsList[i],itemsInfo[i], itemsPrice[i],itemsRate.getFloat(i,0),itemsImageResource.getResourceId(i,0),webpages[i]));
+            if(myRecycleView.callOnClick()){
+                openWebpage(webpages[i]);
+            }
         }
         itemsImageResource.recycle();
         mAdapter.notifyDataSetChanged();
     }
 
 
+
+    public void openWebpage(String URL) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+        startActivity(browserIntent);
+    }
 }

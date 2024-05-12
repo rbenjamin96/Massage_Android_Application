@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -96,6 +97,7 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
         private TextView mPriceText;
         private ImageView mItemImage;
         private RatingBar mRatingBar;
+        private Button mWebpages;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -104,6 +106,7 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
             mPriceText = itemView.findViewById(R.id.price);
             mItemImage = itemView.findViewById(R.id.itemImage);
             mRatingBar = itemView.findViewById(R.id.ratingBar);
+            mWebpages = itemView.findViewById(R.id.webpage);
 
             itemView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -118,7 +121,7 @@ public class ServiceItemAdapter extends RecyclerView.Adapter<ServiceItemAdapter.
             mInfoText.setText(currentItem.getInfo());
             mPriceText.setText(currentItem.getPrice());
             mRatingBar.setRating(currentItem.getRating());
-
+            mWebpages.setText(currentItem.getWebpages());
             Glide.with(mContext).load(currentItem.getImageResource()).into(mItemImage);
         }
     };

@@ -2,6 +2,7 @@ package com.example.massageapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -138,5 +139,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void openWebpage(View view) {
+        String webpageURL = "https://hu.wikipedia.org/wiki/Massz%C3%A1zs";
+        Uri uri = Uri.parse(webpageURL);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+            startActivity(intent);
+
+
     }
 }

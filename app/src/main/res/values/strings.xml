@@ -34,6 +34,7 @@
     <string name="booking">Lefoglalás</string>
     <string name="pickadate">Válassz dátumot:</string>
     <string name="startDate">Dátum</string>
+    <string name="pointToLink">Weboldal:</string>
 
     <string-array name="service_item_names">
         <item>Gyógymasszázs</item>
@@ -43,6 +44,15 @@
         <item>Talpmasszázs</item>
         <item>Thai masszázs</item>
 
+    </string-array>
+
+    <string-array name="webpages">
+        <item>Gyógymasszázs.hu</item>
+        <item>Svédmasszázs.hu</item>
+        <item>Zsírégető masszázs.hu</item>
+        <item>Nyirokmasszázs.hu</item>
+        <item>Talpmasszázs.hu</item>
+        <item>thaimassage.hu</item>
     </string-array>
 
     <string-array name="service_item_description">
