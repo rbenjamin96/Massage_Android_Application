@@ -6,12 +6,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getName();
@@ -21,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText userNameET;
     EditText passwordET;
     private SharedPreferences preferences;
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
          passwordET = findViewById(R.id.editTextPassword);
 
          preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
+
+         mAuth = FirebaseAuth.getInstance();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -49,7 +58,26 @@ public class MainActivity extends AppCompatActivity {
         String userName = userNameET.getText().toString();
         String password = passwordET.getText().toString();
 
-        Log.i(LOG_TAG,"Bejelentkezett: " + userName+ ", jelszó: "+ password);
+        mAuth.signInWithEmailAndPassword(userName,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG,"User has logged in.");
+                    startAppointments();
+                }else{
+                    Log.d(LOG_TAG,"User could not log in.");
+                    Toast.makeText(MainActivity.this, "User login failed, Error:  " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        //Log.i(LOG_TAG,"Bejelentkezett: " + userName+ ", jelszó: "+ password);
+    }
+
+    private void startAppointments(/*registered user data*/){
+        Intent intent = new Intent(this, AppointmentsActivity.class);
+        //intent.putExtra("SECRET_KEY", SECRET_KEY);
+        startActivity(intent);
     }
 
     public void register(View view) {
@@ -98,7 +126,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginAsGuest(View view) {
-        ///TODO
+        mAuth.signInAnonymously().addOnCompleteListener(this, new OnCompleteListener<AuthResult>(){
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG,"Guest has logged in anonymously.");
+                    startAppointments();
+                }else{
+                    Log.d(LOG_TAG,"Guest could not log in anonymously.");
+                    Toast.makeText(MainActivity.this, "User login failed, Error:  " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void loginWithGoogle(View view) {
